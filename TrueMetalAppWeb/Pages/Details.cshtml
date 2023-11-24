@@ -1,0 +1,41 @@
+﻿@page "/Patch/{slug}/{id}"
+@model TrueMetalAppWeb.Pages.DetailsModel
+
+
+<h2 class="my-3">@Model.Patch.Nome</h2>
+
+<div class="row">
+    <div class="col-4">
+        <img class="img-fluid rounded" src="@Model.Patch.ImagemUri">
+    </div>
+
+    <div class="col-6">
+        <h4 class="my-3">Sobre:</h4>
+        <p>@Model.Patch.Descricao</p>
+        <h4 class="my-3">Mais info</h4>
+        <ul>
+            <li>
+                <label asp-for="Patch.Preco"></label>:
+                @Html.DisplayFor(model => model.Patch.Preco)
+                </li>
+            <li>
+                <label asp-for="Patch.EntregaExpressa"></label>:
+                @Html.DisplayFor(model => model.Patch.EntragaExpressaFormatada)
+            </li>
+            <li>
+                <label asp-for="Patch.DataCadastro"></label>:
+                @Html.DisplayFor(model => model.Patch.DataCadastro)
+            </li>
+
+            @if (Model.GeneroNome is not null)
+            {
+                <li>
+                    <label asp-for="Patch.GeneroId"></label>:
+                    @Html.DisplayFor(model => model.GeneroNome)
+                </li>
+            }
+        </ul>
+        <a class="btn my-3 btn-primary" 
+        asp-page="/Edit" asp-route-id="@Model.Patch.PatchId">Editar</a>
+    </div>
+</div>
