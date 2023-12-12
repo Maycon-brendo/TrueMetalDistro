@@ -1,9 +1,10 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using TrueMetalAppWeb.Models;
 
 namespace TrueMetalAppWeb.Data;
 
-public class DistroDbContext : DbContext 
+public class DistroDbContext : IdentityDbContext
 {
     public DbSet<Patch> Patch { get; set; }
     public DbSet<Genero> Genero { get; set; }

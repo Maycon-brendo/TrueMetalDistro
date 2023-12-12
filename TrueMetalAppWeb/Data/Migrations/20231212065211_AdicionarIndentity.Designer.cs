@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TrueMetalAppWeb.Data;
 
@@ -11,9 +12,11 @@ using TrueMetalAppWeb.Data;
 namespace TrueMetalAppWeb.Data.Migrations
 {
     [DbContext(typeof(DistroDbContext))]
-    partial class DistroDbContextModelSnapshot : ModelSnapshot
+    [Migration("20231212065211_AdicionarIndentity")]
+    partial class AdicionarIndentity
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
